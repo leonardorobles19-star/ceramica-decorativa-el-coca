@@ -1,0 +1,312 @@
+/* ============================================
+   PÁGINA CONTACTO — Estilos específicos
+   ============================================ */
+
+.contacto-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+.contacto-encabezado {
+  background-color: var(--color-blanco);
+  padding: 5rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.contacto-titulo {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.contacto-subtitulo {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--color-texto-claro);
+  margin-bottom: 0;
+}
+
+/* ============================================
+   LAYOUT DOS COLUMNAS
+   ============================================ */
+.contacto-principal {
+  padding: 3rem 0 4rem;
+  background-color: var(--color-fondo);
+}
+
+.contacto-columnas {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contacto-columna {
+  flex: 1;
+}
+
+.contacto-seccion-titulo {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+.contacto-input,
+.contacto-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  transition: var(--transicion);
+}
+
+.contacto-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contacto-input::placeholder,
+.contacto-textarea::placeholder {
+  color: var(--color-texto-claro);
+}
+
+.contacto-input:focus,
+.contacto-textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+  background-color: var(--color-blanco);
+}
+
+.contacto-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.contacto-submit:hover {
+  color: var(--color-blanco);
+}
+
+.mensaje-enviado {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-disponible);
+  background-color: rgba(76, 175, 80, 0.12);
+  border: 1px solid var(--color-disponible);
+  border-radius: var(--radio-borde);
+}
+
+.mensaje-enviado[hidden] {
+  display: none;
+}
+
+.mensaje-enviado.visible {
+  display: block;
+}
+
+.contacto-nota {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-claro);
+  text-align: center;
+}
+
+/* ============================================
+   INFORMACIÓN DE CONTACTO
+   ============================================ */
+.contacto-info-col {
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+.contacto-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contacto-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contacto-item-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 140, 66, 0.12);
+  color: var(--color-primario);
+  border-radius: 50%;
+}
+
+.contacto-item-icono svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contacto-item-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contacto-item-etiqueta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-texto-claro);
+}
+
+.contacto-item-texto {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-secundario);
+}
+
+.contacto-item-link {
+  color: var(--color-primario);
+}
+
+.contacto-item-link:hover {
+  color: var(--color-secundario);
+}
+
+.contacto-item-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.contacto-separador {
+  border: none;
+  border-top: 1px solid var(--color-borde);
+  margin: 2rem 0;
+}
+
+.contacto-redes-titulo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+  margin-bottom: 1.25rem;
+}
+
+/* ============================================
+   ÍCONOS REDES SOCIALES (grandes)
+   ============================================ */
+.contacto-redes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contacto-red-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-fondo);
+  color: var(--color-secundario);
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+  transition: var(--transicion);
+}
+
+.contacto-red-social svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.contacto-red-social:hover {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  color: var(--color-blanco);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-suave);
+}
+
+/* ============================================
+   MEDIA QUERIES — CONTACTO
+   ============================================ */
+@media (min-width: 768px) {
+  .contacto-encabezado {
+    padding: 6rem 0 3rem;
+  }
+
+  .contacto-principal {
+    padding: 4rem 0 5rem;
+  }
+
+  .contacto-contenedor {
+    padding: 0 2rem;
+  }
+
+  .contacto-form {
+    padding: 2rem;
+  }
+
+  .contacto-info-col {
+    padding: 2rem;
+  }
+
+  .contacto-nota {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contacto-columnas {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .contacto-formulario-col {
+    flex: 1.1;
+  }
+
+  .contacto-info-col {
+    flex: 0.9;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .contacto-submit {
+    width: auto;
+    align-self: flex-start;
+  }
+}

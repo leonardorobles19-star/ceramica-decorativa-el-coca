@@ -1,0 +1,528 @@
+/* ============================================
+   PÁGINA CATÁLOGO — Estilos específicos
+   ============================================ */
+
+.catalogo-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+.catalogo-encabezado {
+  background-color: var(--color-blanco);
+  padding: 5rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.catalogo-titulo {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.catalogo-subtitulo {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--color-texto-claro);
+  margin-bottom: 0;
+}
+
+/* ============================================
+   FILTROS
+   ============================================ */
+.catalogo-filtros {
+  background-color: var(--color-fondo);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.filtro-buscador {
+  margin-bottom: 1.5rem;
+}
+
+.filtro-etiqueta {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+  margin-bottom: 0.5rem;
+}
+
+.filtro-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  transition: var(--transicion);
+}
+
+.filtro-input:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+.btn-toggle-filtros {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 0.5rem 1rem;
+  font-family: var(--fuente-principal);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-secundario);
+  background-color: transparent;
+  border: 2px solid var(--color-secundario);
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.btn-toggle-filtros:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+.panel-filtros {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.panel-filtros.abierto {
+  max-height: 500px;
+}
+
+.filtro-grupo {
+  margin-bottom: 1.25rem;
+}
+
+.filtro-grupo .filtro-etiqueta {
+  margin-bottom: 0.625rem;
+}
+
+.filtro-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filtro-pill {
+  padding: 0.5rem 1rem;
+  font-family: var(--fuente-principal);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-secundario);
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.filtro-pill:hover {
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.filtro-pill.activo {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.filtro-acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+.btn-limpiar {
+  font-size: 0.9375rem;
+}
+
+.filtro-contador {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-texto-claro);
+  margin-bottom: 0;
+}
+
+/* ============================================
+   GRID DE PRODUCTOS
+   ============================================ */
+.catalogo-grid-seccion {
+  padding: 2.5rem 0 4rem;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.catalogo-vacio {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-texto-claro);
+  padding: 3rem 1rem;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   TARJETA PRODUCTO (igual que index.html)
+   ============================================ */
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+  transition: var(--transicion);
+  cursor: pointer;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-producto-imagen {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-fondo);
+}
+
+.tarjeta-producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transicion);
+}
+
+.tarjeta-producto:hover .tarjeta-producto-imagen img {
+  transform: scale(1.05);
+}
+
+.tarjeta-producto-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+  gap: 0.5rem;
+}
+
+.tarjeta-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.tarjeta-badge.disponible {
+  background-color: rgba(76, 175, 80, 0.12);
+  color: var(--color-disponible);
+}
+
+.tarjeta-badge.reservado {
+  background-color: rgba(229, 57, 53, 0.12);
+  color: var(--color-reservado);
+}
+
+.tarjeta-producto-nombre {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.tarjeta-producto-descripcion {
+  font-size: 0.9375rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.tarjeta-producto-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* ============================================
+   MODAL DE DETALLE
+   ============================================ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.modal-contenido {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-secundario);
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.modal-cerrar:hover {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.modal-galeria {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.modal-imagen-principal {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radio-borde);
+  background-color: transparent;
+}
+
+.modal-imagen-principal img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: unset;
+  display: block;
+  border-radius: var(--radio-borde);
+  cursor: zoom-in;
+}
+
+.modal-miniaturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.modal-miniatura {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  transition: var(--transicion);
+}
+
+.modal-miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-miniatura:hover,
+.modal-miniatura.activa {
+  border-color: var(--color-primario);
+}
+
+.modal-info {
+  padding: 1.5rem;
+}
+
+.modal-nombre {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-right: 2.5rem;
+}
+
+.modal-descripcion {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.modal-medidas {
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+}
+
+.modal-medidas strong {
+  color: var(--color-secundario);
+}
+
+.modal-info .tarjeta-badge {
+  margin-bottom: 1rem;
+}
+
+.modal-nota {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-texto-claro);
+  padding: 0.75rem 1rem;
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-borde);
+  border-left: 3px solid var(--color-primario);
+  margin-bottom: 1.5rem;
+}
+
+.modal-btn-reservar {
+  width: 100%;
+  text-align: center;
+}
+
+.modal-btn-reservar:hover {
+  color: var(--color-blanco);
+}
+
+/* ============================================
+   MEDIA QUERIES — CATÁLOGO
+   ============================================ */
+@media (min-width: 768px) {
+  .catalogo-encabezado {
+    padding: 6rem 0 3rem;
+  }
+
+  .catalogo-filtros {
+    padding: 2.5rem 0;
+  }
+
+  .filtro-acciones {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .catalogo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .modal-contenido {
+    flex-direction: row;
+    max-height: 85vh;
+    overflow: hidden;
+  }
+
+  .modal-galeria {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+
+  .modal-info {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalogo-contenedor {
+    padding: 0 2rem;
+  }
+
+  .catalogo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox-imagen {
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: default;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 50%;
+  transition: var(--transicion);
+}
+
+.lightbox-cerrar:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
